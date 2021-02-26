@@ -1,0 +1,6 @@
+Copying requirements.txt file successful 
+virtualenv installation is successful 
+Create virtualenv is successful 
+Run activate.bat is successful 
+Gathering dependencies is successful 
+Your environment is ready on C:\Projects\AdaptLab\scripts\environment_creator\..\..\environments\AdaptLabWinEnv 
