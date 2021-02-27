@@ -103,17 +103,6 @@ WSGI_APPLICATION = 'adapt_lab_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'adapt_lab_db',
-        'CLIENT':{
-            'host': 'localhost',
-        }
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
