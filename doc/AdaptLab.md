@@ -8,7 +8,7 @@ There will be pre-assigned tasks to newcomers.
 After newcomers  completes their "newcomer tasks", they will be ready to get real tasks.
 
 
-**AdaptLab provides 3 types of user.**
+**AdaptLab provides 4 types of user.**
 * Superuser
 * Owner
 * Tutor
