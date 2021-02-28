@@ -1,5 +1,5 @@
 # AdaptLab
-*Ahmet Güngör*
+*Ahmet Güngör*<br>
 *Aziz Furkan Dağlı*
 
 This project is designed to guide newcomers who has just joined to an organization.
