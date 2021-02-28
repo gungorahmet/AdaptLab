@@ -62,7 +62,7 @@ After newcomers  completes their "newcomer tasks", they will be ready to get rea
 AdaptLab provides assigning a newcomer to multiple projects and multiple teams.
 
 
-AdaptLab contains 3 types task types;
+AdaptLab contains 3 task types;
 
 * **Post**
 * **Quiz**
