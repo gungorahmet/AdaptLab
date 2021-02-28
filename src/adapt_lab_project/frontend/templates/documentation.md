@@ -1,9 +1,9 @@
 # AdaptLab
 *Ahmet Güngör*<br>
-*Aziz Furkan Dağlı*
+*Aziz Furkan Dağlı*<br>
 
 This project is designed to guide newcomers who has just joined to an organization.
-
+<br>
 There will be pre-assigned tasks to newcomers.
 After newcomers  completes their "newcomer tasks", they will be ready to get real tasks.
 
