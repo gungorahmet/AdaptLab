@@ -1,19 +1,24 @@
 # AdaptLab
 *Ahmet Güngör*<br>
-*Aziz Furkan Dağlı*<br>
+*Aziz Furkan Dağlı*<br><br>
 
 This project is designed to guide newcomers who has just joined to an organization.
 <br>
 There will be pre-assigned tasks to newcomers.
+<br>
 After newcomers  completes their "newcomer tasks", they will be ready to get real tasks.
-
+<br>
+<br>
+AdaptLab provides a user page for newcomer to check his/her overall progress.
+<br>
+<br>
 
 **AdaptLab provides 4 types of user.**
 * Superuser
 * Owner
 * Tutor
 * User
-
+<br>
 <br>
 
 **Superuser**:
@@ -73,6 +78,8 @@ AdaptLab contains 3 task types;
 **Post**: 
 
 	Guides you how to do some job. Posts supports to have attached files on it.
+	Posts supports to contaion multiple file types such as image, video etc.
+	Posts supports to embed image/video from related sources such as Youtube etc.
 
 	For example;
 	    - Guides you for how to get free day on system.
@@ -81,7 +88,7 @@ AdaptLab contains 3 task types;
 
 **Quiz**: 
 
-	Some Posts will guide you to perfornm some process. After completing Posts, it can be a Quiz about this related Post.
+	Some Posts will guide you to perform some process. After completing Posts, it can be a Quiz about this related Post.
 
 	For example;
 		- A Post explains you about a module of a product. A Quiz can be created about this Post.
@@ -107,4 +114,5 @@ AdaptLab has "ready set" feature. Whenever a newcomer joins in a new organizatio
 
 AdaptLab supports combine "ready set" templates. You can simply create small "ready set"s and you can combine with each other.
 
-	For example if you have some common tasks, you can seperate those common tasks in a seperated "ready set" and you can include to your own spesific "ready set".
+	For example;
+	    If you have some common tasks, you can seperate those common tasks in a seperated "ready set" and you can include to your own spesific "ready set".
