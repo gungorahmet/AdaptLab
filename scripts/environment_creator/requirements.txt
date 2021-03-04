@@ -5,3 +5,4 @@ pymongo==3.11.0
 requests==2.22.0
 django-cors-headers==3.7.0
 bootstrap-admin==0.4.4
+whitenoise==5.2.0
