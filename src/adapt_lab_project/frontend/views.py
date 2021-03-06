@@ -7,15 +7,6 @@ from django.shortcuts import render
 
 response = {"response": {"test": "value"}}
 
-class DocPage(APIView):
-    def get(self, request):
-        try:
-            return render(request, "documentation.html", response)
-        except Exception as e:
-            print(e)
-            return Response(status=500)
-
-
 class DashboardPage(APIView):
     def get(self, request):
         try:
