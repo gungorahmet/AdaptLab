@@ -43,4 +43,5 @@ urlpatterns = [
     url('features/', TemplateView.as_view(template_name="features.html")),
     url('blog/', TemplateView.as_view(template_name="blog.html")),
     url('signup/', TemplateView.as_view(template_name="signup.html")),
+    url('use_case/experience_share', TemplateView.as_view(template_name="ExperienceSharingUseCase.html")),
 ]
