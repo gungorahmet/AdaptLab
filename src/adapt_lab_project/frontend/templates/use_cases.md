@@ -164,7 +164,7 @@ Tutor also will give his/her comments about progress of newcomer and make assess
 
 # Colleague Assessment Use Case
 
-Colleagues can see, write comments and about progress of newcomers.
+Colleagues can see, write comments and send emotions about progress of newcomers.
 <br>
 <br>
 
