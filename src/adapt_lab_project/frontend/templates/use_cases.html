@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>AdaptLab</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="adaptlab">AdaptLab</h1>
+<p><em>Ahmet Güngör</em><br>
+<em>Aziz Furkan Dağlı</em><br><br>
+<br></p>
+<h1 id="mission">Mission</h1>
+<p>This project is designed to guide newcomers who has just joined to an organization.
+<br>
+There will be pre-assigned tasks to newcomers.
+<br>
+After newcomers  completes their &quot;newcomer tasks&quot;, they will be ready to get real tasks.</p>
+<h1 id=""></h1>
+<br>
+<br>
+<h1 id="daily-jobs-use-case">Daily Jobs Use Case</h1>
+<p>Newcomer will be assigned to daily tasks.
+<br>
+<br></p>
+<h1 id="daily-jobs-types-use-case">Daily Jobs Types Use Case</h1>
+<p>AdaptLab has <strong>3</strong> task types;
+<br></p>
+<ul>
+<li><strong>Post</strong></li>
+<li><strong>Quiz</strong></li>
+<li><strong>Task</strong></li>
+</ul>
+<br>
+<p><strong>Post</strong>:</p>
+<p>Guides you how to do some job. Posts supports to have attached files on it.
+Posts supports to contaion multiple file types such as image, video etc.
+Posts supports to embed image/video from related sources such as Youtube etc.</p>
+<p>For example;</p>
+<ul>
+<li>Guides you for how to get free day on system.</li>
+<li>Guides you for how to fix your proxy issues.</li>
+</ul>
+<p>Newcomer will be assigned to daily tasks.
+<br>
+<br>
+After reading post will be completed, it will be needed to click <strong>&quot;Completed&quot;</strong> <strong>button</strong> by newcomer. by newcomer.
+<br></p>
+<p><strong>Quiz</strong>:</p>
+<p>Some Posts will guide you to perform some process. After completing Posts, it can be a Quiz about this related Post.</p>
+<p>For example;</p>
+<ul>
+<li>A Post explains you about a module of a product. A Quiz can be created about this Post.</li>
+<li>Quiz does not have to be related with a Post. It can be a random topic which can be created by tutors to check whether newcomer has a knowledge about a spesific topic.</li>
+</ul>
+<br>
+<p><strong>Task</strong>:</p>
+<p>Tutor is able to create Tasks for newcomer. Newcomer needs to complete these Tasks and needs to inform his progress to tutor on AdaptLab System.</p>
+<br>
+<br>
+<h1 id="time-estimation-of-tasks-use-case">Time Estimation of Tasks Use Case</h1>
+<p>Every <strong>Post</strong>, <strong>Task</strong> and <strong>Quiz</strong> will have expected completion time.
+<br>
+<br></p>
+<h1 id="checking-previous-and-future-dailys-tasks-use-case">Checking Previous and Future Dailys Tasks Use Case</h1>
+<p>Newcomer will be able to check content of previous daily tasks.<br>
+Newcomer will be able to see future daily task names but will <strong>not</strong> be able to see its contents.<br>
+If there is incomplete tasks from previous days, newcomer will <strong>not</strong> be able to see content of current or future tasks.
+<br>
+<br>
+After completing a task, it will be needed to click <strong>&quot;Completed&quot;</strong> <strong>button</strong> by newcomer.
+<br>
+<br></p>
+<h1 id="newcomer-dashboard-use-case">Newcomer Dashboard Use Case</h1>
+<p>Newcomer will have a all-in-one dashboard to check his overall progress.
+<br>
+<br></p>
+<h1 id="user-types-use-case">User Types Use Case</h1>
+<p>AdaptLab provides <strong>4</strong> user types.
+<br></p>
+<ul>
+<li><strong>Superuser</strong></li>
+<li><strong>Manager</strong></li>
+<li><strong>Tutor</strong></li>
+<li><strong>User</strong></li>
+</ul>
+<br>
+<p><strong>Superuser</strong>:</p>
+<p>The most powerful user. Has all  of permissions and has no restriction on AdaptLab.</p>
+<ul>
+<li>Create department or organization.
+<br>
+<br></li>
+</ul>
+<p><strong>Manager</strong>:</p>
+<p>AdaptLab Manager of a department or organization.</p>
+<p>Has permission to;</p>
+<ul>
+<li>Create teams</li>
+<li>Create projects</li>
+<li>Create tasks</li>
+<li>Create &quot;<strong>ready set</strong>&quot;s</li>
+<li>Add Tutor (Owner is able to restrict tutor rights)</li>
+<li>Add Newcomer</li>
+<li>Assign newcomer to tutors</li>
+<li>Check newcomer process</li>
+</ul>
+<br>
+<p><strong>Tutor</strong>:</p>
+<p>Tutor of newcomer.</p>
+<p>Has permission to;</p>
+<ul>
+<li>Create tasks</li>
+<li>Create &quot;<strong>ready set</strong>&quot;s</li>
+<li>Assign newcomer to projects and teams</li>
+<li>Check newcomer process</li>
+</ul>
+<br>
+<p><strong>User</strong>:</p>
+<p>User is newcomer.</p>
+<p>Has permission to;</p>
+<ul>
+<li>Handle newcomer tasks</li>
+<li>Upload document.</li>
+<li>Check newcomer process</li>
+</ul>
+<br>
+<h1 id="experience-sharing-use-case">Experience Sharing Use Case</h1>
+<p>A newcomer wants to share some experiences with his/her new colleagues. We will provide an interface to write document and send document to his/her new colleagues via e-mail.
+The system will <strong>both</strong> store documents in the database and send e-mail. So, newcomer who will join the organization in the future can see these documents.
+<br>
+<br></p>
+<h1 id="tutor-assessment-use-case">Tutor Assessment Use Case</h1>
+<p>Tutor can make daily or overall assessment, write comments and send emotions about progress of newcomers.<br>
+Tutor also will give his/her comments about progress of newcomer and make assessment after all of dailys tasks will be completed.
+<br>
+<br></p>
+<h1 id="colleague-assessment-use-case">Colleague Assessment Use Case</h1>
+<p>Colleagues can see, write comments and about progress of newcomers.
+<br>
+<br></p>
+<h1 id="ready-set-use-case">Ready-Set Use Case</h1>
+<p>AdaptLab has &quot;<strong>ready set</strong>&quot; feature. Whenever a newcomer joins in a new organization, it supports pre-prepared templates to use for spesific users.</p>
+<p>For example;</p>
+<ul>
+<li>In A department, there are x, y, z teams and these teams works on K, L, M projects.<br>
+AdaptLab admin of A department can prepare for &quot;x team and K project&quot; spesific &quot;ready set&quot; and all of newcomers who will be in x team and K project can be use this system.
+<br>
+<br></li>
+</ul>
+<h1 id="combine-ready-set-use-case">Combine Ready-Set Use Case</h1>
+<p>AdaptLab supports combining &quot;<strong>ready set</strong>&quot; templates.<br>
+You can simply create small &quot;<strong>ready set</strong>&quot;s and you can combine with each other.</p>
+<p>For example;</p>
+<ul>
+<li>If you have some common tasks, you can seperate those common tasks in a seperated &quot;ready set&quot; and you can include to your own spesific &quot;ready set&quot;.
+<br>
+<br></li>
+</ul>
+
+    </body>
+    </html>
