@@ -1,0 +1,12 @@
+tbl_departments
+tbl_material_types
+tbl_roles
+tbl_user_types
+tbl_materials
+tbl_teams
+tbl_users
+tbl_projects
+tbl_users_n_n_materials
+tbl_tags
+table_users_n_n_projects
+tbl_comments

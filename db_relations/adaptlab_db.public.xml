@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="adaptlab_db" schema="public" type="PostgreSQL - 13.2">
+   <sequences>
+      <sequence increment="1" name="table_users_n_n_projects_id_seq" startValue="1"/>
+      <sequence increment="1" name="tbl_comments_comment_id_seq" startValue="1"/>
+      <sequence increment="1" name="tbl_departments_id_seq" startValue="1"/>
+      <sequence increment="1" name="tbl_material_types_id_seq" startValue="1"/>
+      <sequence increment="1" name="tbl_materials_material_id_seq" startValue="1"/>
+      <sequence increment="1" name="tbl_projects_id_seq" startValue="1"/>
+      <sequence increment="1" name="tbl_roles_id_seq" startValue="1"/>
+      <sequence increment="1" name="tbl_tags_tag_id_seq" startValue="1"/>
+      <sequence increment="1" name="tbl_teams_id_seq" startValue="1"/>
+      <sequence increment="1" name="tbl_user_types_id_seq" startValue="1"/>
+      <sequence increment="1" name="tbl_users_id_seq" startValue="1"/>
+      <sequence increment="1" name="tbl_users_n_n_materials_user_material_id_seq" startValue="1"/>
+   </sequences>
+   <tables>
+      <table name="table_users_n_n_projects" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('table_users_n_n_projects_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="user_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="user_id" foreignKey="tbl_users_n_n_projects_user_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="project_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="project_id" foreignKey="tbl_users_n_n_projects_project_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_projects"/>
+         </column>
+         <index name="fki_tbl_users_n_n_projects_project_id_fkey" unique="false">
+            <column ascending="true" name="project_id"/>
+         </index>
+         <index name="fki_tbl_users_n_n_projects_user_id_fkey" unique="false">
+            <column ascending="true" name="user_id"/>
+         </index>
+      </table>
+      <table name="tbl_comments" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('tbl_comments_comment_id_seq'::regclass)" digits="0" id="0" name="comment_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="user_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="user_id" foreignKey="tbl_comments_user_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="user_material_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="user_material_id" foreignKey="tbl_comments_user_material_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_users_n_n_materials"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="comment_body" nullable="false" remarks="" size="250" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="4" name="create_date" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="update_date" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="comment_id" sequenceNumberInPK="1"/>
+         <index name="tbl_comments_pkey" unique="true">
+            <column ascending="true" name="comment_id"/>
+         </index>
+         <index name="fki_tbl_comments_user_id_fkey" unique="false">
+            <column ascending="true" name="user_id"/>
+         </index>
+         <index name="fki_tbl_comments_user_material_id_fkey" unique="false">
+            <column ascending="true" name="user_material_id"/>
+         </index>
+      </table>
+      <table name="tbl_departments" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('tbl_departments_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="department_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="department_id" foreignKey="tbl_projects_department_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_projects"/>
+            <child column="department_id" foreignKey="tbl_teams_department_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_teams"/>
+            <child column="department_id" foreignKey="tbl_users_department_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="department_name" nullable="false" remarks="" size="1" type="bpchar" typeCode="1"/>
+         <primaryKey column="department_id" sequenceNumberInPK="1"/>
+         <index name="tbl_departments_pkey" unique="true">
+            <column ascending="true" name="department_id"/>
+         </index>
+      </table>
+      <table name="tbl_material_types" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('tbl_material_types_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="material_type_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="material_type_id" foreignKey="tbl_materials_material_type_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_materials"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="material_type" nullable="false" remarks="" size="20" type="bpchar" typeCode="1"/>
+         <primaryKey column="material_type_id" sequenceNumberInPK="1"/>
+         <index name="tbl_material_types_pkey" unique="true">
+            <column ascending="true" name="material_type_id"/>
+         </index>
+      </table>
+      <table name="tbl_materials" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('tbl_materials_material_id_seq'::regclass)" digits="0" id="0" name="material_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="material_id" foreignKey="tbl_tags_material_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_tags"/>
+            <child column="material_id" foreignKey="tbl_users_n_n_materials_material_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_users_n_n_materials"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="material_type_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="material_type_id" foreignKey="tbl_materials_material_type_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_material_types"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="material_title" nullable="false" remarks="" size="100" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="3" name="create_date" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="4" name="update_date" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="material_id" sequenceNumberInPK="1"/>
+         <index name="tbl_materials_pkey" unique="true">
+            <column ascending="true" name="material_id"/>
+         </index>
+         <index name="fki_tbl_materials_material_type_id_fkey" unique="false">
+            <column ascending="true" name="material_type_id"/>
+         </index>
+      </table>
+      <table name="tbl_projects" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('tbl_projects_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="project_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="project_id" foreignKey="tbl_users_n_n_projects_project_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="table_users_n_n_projects"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="project_name" nullable="false" remarks="" size="50" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="department_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="department_id" foreignKey="tbl_projects_department_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_departments"/>
+         </column>
+         <primaryKey column="project_id" sequenceNumberInPK="1"/>
+         <index name="tbl_projects_pkey" unique="true">
+            <column ascending="true" name="project_id"/>
+         </index>
+         <index name="fki_tbl_projects_department_id_fkey" unique="false">
+            <column ascending="true" name="department_id"/>
+         </index>
+      </table>
+      <table name="tbl_roles" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('tbl_roles_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="role_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="role_id" foreignKey="tbl_users_role_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="role_name" nullable="false" remarks="" size="50" type="bpchar" typeCode="1"/>
+         <primaryKey column="role_id" sequenceNumberInPK="1"/>
+         <index name="tbl_roles_pkey" unique="true">
+            <column ascending="true" name="role_id"/>
+         </index>
+      </table>
+      <table name="tbl_tags" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('tbl_tags_tag_id_seq'::regclass)" digits="0" id="0" name="tag_id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="material_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="material_id" foreignKey="tbl_tags_material_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_materials"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="tag_name" nullable="false" remarks="" size="20" type="bpchar" typeCode="1"/>
+         <index name="fki_tbl_tags_material_id_fkey" unique="false">
+            <column ascending="true" name="material_id"/>
+         </index>
+      </table>
+      <table name="tbl_teams" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('tbl_teams_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="team_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="team_id" foreignKey="tbl_users_team_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="team_name" nullable="false" remarks="" size="50" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="department_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="department_id" foreignKey="tbl_teams_department_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_departments"/>
+         </column>
+         <primaryKey column="team_id" sequenceNumberInPK="1"/>
+         <index name="tbl_teams_pkey" unique="true">
+            <column ascending="true" name="team_id"/>
+         </index>
+         <index name="fki_tbl_teams_department_id_fkey" unique="false">
+            <column ascending="true" name="department_id"/>
+         </index>
+      </table>
+      <table name="tbl_user_types" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('tbl_user_types_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="user_type_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="user_type_id" foreignKey="tbl_users_user_type_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="user_type" nullable="false" remarks="" size="20" type="bpchar" typeCode="1"/>
+         <primaryKey column="user_type_id" sequenceNumberInPK="1"/>
+         <index name="tbl_user_types_pkey" unique="true">
+            <column ascending="true" name="user_type_id"/>
+         </index>
+      </table>
+      <table name="tbl_users" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('tbl_users_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="user_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="user_id" foreignKey="tbl_users_n_n_projects_user_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="table_users_n_n_projects"/>
+            <child column="user_id" foreignKey="tbl_comments_user_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_comments"/>
+            <child column="user_id" foreignKey="tbl_users_n_n_materials_user_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_users_n_n_materials"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="user_name" nullable="false" remarks="" size="25" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="user_surname" nullable="false" remarks="" size="25" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="user_email" nullable="false" remarks="" size="50" type="bpchar" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="role_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="role_id" foreignKey="tbl_users_role_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_roles"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="department_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="department_id" foreignKey="tbl_users_department_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_departments"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="team_id" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="team_id" foreignKey="tbl_users_team_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_teams"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="user_type_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="user_type_id" foreignKey="tbl_users_user_type_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_user_types"/>
+         </column>
+         <primaryKey column="user_id" sequenceNumberInPK="1"/>
+         <index name="tbl_users_pkey" unique="true">
+            <column ascending="true" name="user_id"/>
+         </index>
+         <index name="fki_tbl_users_department_id_fkey" unique="false">
+            <column ascending="true" name="department_id"/>
+         </index>
+         <index name="fki_tbl_users_role_id_fkey" unique="false">
+            <column ascending="true" name="role_id"/>
+         </index>
+         <index name="fki_tbl_users_team_id_fkey" unique="false">
+            <column ascending="true" name="team_id"/>
+         </index>
+         <index name="fki_tbl_users_user_type_id_fkey" unique="false">
+            <column ascending="true" name="user_type_id"/>
+         </index>
+      </table>
+      <table name="tbl_users_n_n_materials" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('tbl_users_n_n_materials_user_material_id_seq'::regclass)" digits="0" id="0" name="user_material_id" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child column="user_material_id" foreignKey="tbl_comments_user_material_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_comments"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="user_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="user_id" foreignKey="tbl_users_n_n_materials_user_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_users"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="material_id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="material_id" foreignKey="tbl_users_n_n_materials_material_id_fkey" implied="false" onDeleteCascade="false" schema="public" table="tbl_materials"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="material_status" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="4" name="create_date" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="update_date" nullable="false" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <primaryKey column="user_material_id" sequenceNumberInPK="1"/>
+         <index name="tbl_users_n_n_materials_pkey" unique="true">
+            <column ascending="true" name="user_material_id"/>
+         </index>
+         <index name="fki_tbl_users_n_n_materials_material_id_fkey" unique="false">
+            <column ascending="true" name="material_id"/>
+         </index>
+         <index name="fki_tbl_users_n_n_materials_user_id_fkey" unique="false">
+            <column ascending="true" name="user_id"/>
+         </index>
+      </table>
+   </tables>
+</database>
